@@ -9,6 +9,8 @@ ssl._create_default_https_context = ssl._create_unverified_context
 # ler arquivo
 #dataset_path = '2023_spotify_ds1.csv'
 dataset_path = os.getenv("DATASET", "app/datasets/2023_spotify_ds1.csv")
+print("DATASET")
+print(dataset_path)
 dataset = pd.read_csv(dataset_path)
 
 # group by e to list
