@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: model-job-2
+  name: model-job-v2
   namespace: luisatoledo
 spec:
   template:
