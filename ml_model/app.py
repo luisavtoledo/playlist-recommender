@@ -23,5 +23,5 @@ for rule in rules[:5]:  # Mostrar as primeiras 5 regras
 '''
     
 # salvar em arquivo pickle
-with open("data/rules.pkl", 'wb') as file:
+with open("/data/rules.pkl", 'wb') as file:
     pickle.dump(rules, file)
