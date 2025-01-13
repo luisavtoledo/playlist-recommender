@@ -3,7 +3,9 @@ import os
 import pandas as pd
 from fpgrowth_py import fpgrowth
 import pickle
+import ssl
 
+ssl._create_default_https_context = ssl._create_unverified_context
 # ler arquivo
 #dataset_path = '2023_spotify_ds1.csv'
 dataset_path = os.getenv("DATASET", "app/datasets/2023_spotify_ds1.csv")

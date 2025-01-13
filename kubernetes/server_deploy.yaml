@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: server-container
-        image: quay.io/luisavtoledo/recommendation-server:0.3
+        image: quay.io/luisavtoledo/recommendation-server:0.4
         ports:
         - containerPort: 52048
         volumeMounts:
