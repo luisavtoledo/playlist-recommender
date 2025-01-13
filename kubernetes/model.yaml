@@ -1,0 +1,26 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: model-job
+  namespace: luisatoledo
+spec:
+  template:
+    metadata:
+      labels:
+        app: model-luisatoledo
+    spec:
+      containers:
+      - name: rules-generator-container
+        image: quay.io/luisavtoledo/rules-generator:latest
+        env:
+        - name: DATASET
+          value: "https://homepages.dcc.ufmg.br/~cunha/hosted/cloudcomp-2023s2-datasets/2023_spotify_ds2.csv"
+        volumeMounts:
+          - name: persistent-storage
+            mountPath: /data
+      volumes:
+      - name: persistent-storage
+        persistentVolumeClaim:
+          claimName: project2-pv2-luisatoledo
+      restartPolicy: Never
+  backoffLimit: 4

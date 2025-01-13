@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: recommender-server-service
+  namespace: luisatoledo
+spec:
+  selector:
+    app: recommender-server-luisatoledo
+  ports:
+  - protocol: TCP
+    port: 52048
+    targetPort: 52048
