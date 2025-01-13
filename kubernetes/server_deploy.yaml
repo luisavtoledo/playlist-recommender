@@ -1,24 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: recommender-server-deployment
+  name: server-deploy
   namespace: luisatoledo
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: recommender-server-luisatoledo
+      app: server-luisatoledo
   template:
     metadata:
       labels:
-        app: recommender-server-luisatoledo
+        app: server-luisatoledo
     spec:
       containers:
       - name: recommender-server-container
         image: quay.io/luisavtoledo/recommendation-server:0.2
         ports:
         - containerPort: 52048
-        
+        volumeMounts:
         - mountPath: /data
           name: persistent-storage
       volumes:
