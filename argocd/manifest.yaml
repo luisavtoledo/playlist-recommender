@@ -1,0 +1,12 @@
+project: luisatoledo-project
+source:
+  repoURL: https://github.com/luisavtoledo/playlist-recommender
+  path: kubernetes/
+  targetRevision: HEAD
+destination:
+  server: https://kubernetes.default.svc
+  namespace: luisatoledo
+syncPolicy:
+  automated:
+    prune: true
+    selfHeal: true
